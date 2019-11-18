@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="5dp"
+    android:paddingVertical="15dp"
+    android:paddingHorizontal="5dp"
+    android:background="#FFF">
+    <TableRow
+        android:layout_marginVertical="5dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전화번호 1 : "
+        android:textColor="#D111"
+        android:layout_weight="1"
+        android:gravity="center"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="전화번호 입력"
+        android:inputType="phone"
+        android:layout_weight="3"
+        android:textColor="#D111"
+        android:id="@+id/phone_1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장"
+        android:backgroundTint="#2000"
+        android:textColor="#D111"
+        android:onClick="save"
+        android:id="@+id/add_1"/>
+</TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전화번호 2 : "
+            android:textColor="#D111"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="전화번호 입력"
+            android:inputType="phone"
+            android:layout_weight="3"
+            android:textColor="#D111"
+            android:id="@+id/phone_2"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="저장"
+            android:onClick="save"
+            android:backgroundTint="#2000"
+            android:textColor="#D111"
+            android:id="@+id/add_2"/>
+    </TableRow>
+
+
+</TableLayout>

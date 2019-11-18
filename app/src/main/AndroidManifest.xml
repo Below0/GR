@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+ android:targetSandboxVersion="1"
+
+    package="com.example.hayounglee.xml_test">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDdQj-tSskzSFuOISVj771oSwRfmcrRnEc" /> <!-- 박동희 인증키 AIzaSyDMpTzPv8zhvYP-eiCVo5LDEMY6iV5_Mvg -->
+        <!-- android:value="AIzaSyDXQUYndbYU2nBmwdwFJg6ZYxCokTMP170" /> -->
+        <!-- AIzaSyDdQj-tSskzSFuOISVj771oSwRfmcrRnEc -->
+        <!-- 이하영 인증키 AIzaSyDXQUYndbYU2nBmwdwFJg6ZYxCokTMP170" -->
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+        <activity android:name=".MainActivity" />
+
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".SmsActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DialogActivity"
+            android:theme="@style/dialog" />
+        <activity android:name=".settingActivity" />
+        <activity
+            android:name=".phonenumSetting"
+            android:theme="@style/dialog">
+            <intent-filter>
+                <action android:name="android.provider.Settings.SHOW_NOTIFICATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Eqaction" />
+    </application>
+
+</manifest>

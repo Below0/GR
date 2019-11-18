@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--환경설정에서 사용할 문자열 배열데이터-->
+    <string-array name="phonenums">
+        <item>010-8411-1642</item>
+        <item>010-0000-0000</item>
+    </string-array>
+</resources>

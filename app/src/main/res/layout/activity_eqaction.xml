@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:padding="15dp"
+        android:background="#1333"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher_round" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="지진시 행동요령"
+            android:textSize="35dp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9.0">
+        <!--장소별 행동요령-->
+        <LinearLayout
+            android:id="@+id/locLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="locBtn"
+                    android:id="@+id/btn1"
+                    android:src="@drawable/plocact1"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="locBtn"
+                    android:id="@+id/btn2"
+                    android:src="@drawable/plocact2"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="locBtn"
+                    android:id="@+id/btn3"
+                    android:src="@drawable/plocact3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="locBtn"
+                    android:id="@+id/btn4"
+                    android:src="@drawable/plocact4" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="locBtn"
+                    android:id="@+id/btn5"
+                    android:src="@drawable/plocact5" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="locBtn"
+                    android:id="@+id/btn6"
+                    android:src="@drawable/plocact6"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="locBtn"
+                    android:id="@+id/btn7"
+                    android:src="@drawable/plocact7" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="locBtn"
+                    android:id="@+id/btn8"
+                    android:src="@drawable/plocact8" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="locBtn"
+                    android:id="@+id/btn9"
+                    android:src="@drawable/plocact9" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--상황별 행동요령-->
+        <LinearLayout
+            android:id="@+id/situLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="invisible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="situBtn"
+                    android:src="@drawable/psituact1"
+                    android:id="@+id/situbtn1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="situBtn"
+                    android:id="@+id/situbtn2"
+                    android:src="@drawable/psituact2" />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:baselineAligned="false"
+                        android:onClick="situBtn"
+                        android:src="@drawable/psituact3"
+                        android:id="@+id/situbtn3"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:baselineAligned="false"
+                        android:onClick="situBtn"
+                        android:id="@+id/situbtn4"
+                        android:src="@drawable/psituact4" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="situBtn"
+                    android:id="@+id/situbtn5"
+                    android:src="@drawable/psituact5" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:baselineAligned="false"
+                    android:onClick="situBtn"
+                    android:id="@+id/situbtn6"
+                    android:src="@drawable/psituact6" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+        <Button
+            android:padding="0dp"
+            android:id="@+id/locActionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="menuClick"
+            android:text="장소별 행동요령"
+            android:background="@drawable/select_border"/>
+        <Button
+            android:padding="0dp"
+            android:id="@+id/situActionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="menuClick"
+            android:text="상황별 행동요령"
+            android:background="@drawable/non_select_border"/>
+    </LinearLayout>
+
+</LinearLayout>

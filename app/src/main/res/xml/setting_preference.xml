@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <PreferenceCategory android:title="환경설정">
+
+        <PreferenceScreen
+            android:key="phonenum_message"
+            android:title="지진 발생시 문자 전송"
+            android:summary="사용안함">
+
+            <SwitchPreference
+                android:defaultValue="true"
+                android:key="phonenum"
+                android:summary="지진이 발생하였을 시 입력 해 놓은 번호로 현재 자신의 위치가 전송됩니다."
+                android:title="지진 발생시 문자 전송"/>
+            <Preference
+                android:title="전화번호"
+                android:summary="전화번호 설정">
+                <intent android:action=
+                    "android.provider.Settings.SHOW_NOTIFICATION" />
+            </Preference>
+        </PreferenceScreen>
+
+
+            <SwitchPreference
+                android:defaultValue="true"
+                android:key="DETECT_ON"
+                android:summary="기상청으로 부터 지진 정보를 받아옵니다."
+                android:title="지진 감지"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

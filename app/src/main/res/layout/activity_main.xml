@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:weightSum="10">
+<FrameLayout
+    android:layout_weight="9.5"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+    <!-- 첫번째 메뉴 -->
+    <LinearLayout
+        android:id="@+id/menu0"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:padding="15dp"
+            android:background="#1333"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher_round" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="지진 알리미 GR"
+                android:textSize="35dp"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="최근 발생 지진"
+            android:textSize="35dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/tmeqk"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="최근 기록 없음"
+            android:textSize="30dp"
+            android:gravity="center"/>
+        <ImageView
+            android:id="@+id/main_iv2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:layout_gravity="top|center_horizontal"/>
+
+    </LinearLayout>
+<!-- 두번째 메뉴 -->
+    <LinearLayout
+        android:id="@+id/menu1"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+               <fragment
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.8"
+                    class="com.google.android.gms.maps.MapFragment" />
+
+            </LinearLayout>
+        <Button
+            android:id="@+id/button"
+            android:text="대피소 탐색"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="mOnClick"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="20dp"/>
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/shelterinfo"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="120dp"
+                android:layout_width="230dp"
+                android:layout_height="170dp"
+                android:orientation="vertical"
+                android:background="#AFFF"
+                >
+                <FrameLayout
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp">
+                    <TextView
+                        android:textColor="#000"
+                        android:layout_margin="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="대피소 정보"
+                        android:gravity="center"/>
+                    <ImageView
+                        android:onClick="mOnClick"
+                        android:id="@+id/favorite"
+                        android:layout_marginRight="5dp"
+                        android:scaleType="center"
+                        android:layout_gravity="right"
+                        android:background="@drawable/star"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </FrameLayout>
+                <TextView
+                    android:id="@+id/st_id"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="대피소 이름"
+                    android:gravity="center"/>
+                <TableLayout
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="3dp">
+                    <TextView
+                        android:id="@+id/st_address"
+                        android:layout_weight="1"
+                        android:text="대피소 주소"
+                        android:gravity="center"/>
+                    <TableRow
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_weight="2"
+                            android:text="위도 : "/>
+                        <TextView
+                            android:id="@+id/st_x"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:text="0.0"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_weight="2"
+                            android:text="경도 : "/>
+                        <TextView
+                            android:id="@+id/st_y"
+                            android:layout_weight="8"
+                            android:gravity="center"
+                            android:text="0.0"/>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+            <ImageButton
+                android:visibility="invisible"
+                android:id="@+id/fav_btn"
+                android:onClick="mOnClick"
+                android:padding="10dp"
+                android:scaleType="center"
+                android:layout_gravity="left|bottom"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="120dp"
+                android:src="@drawable/star_fill"
+                android:adjustViewBounds="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/round_btn"
+          />
+        </FrameLayout>
+    </LinearLayout>
+    <!-- 세번째 메뉴 -->
+    <LinearLayout
+        android:visibility="invisible"
+        android:id="@+id/menu2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:padding="15dp"
+            android:background="#1333"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher_round" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="최근 지진 목록"
+                android:textSize="35dp"
+                />
+        </LinearLayout>
+        <ListView
+            android:background="#CFFF"
+            android:layout_gravity="top"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/record"
+            android:divider="#AAAA"
+            android:dividerHeight="1.5dp">
+        </ListView>
+
+    </LinearLayout>
+
+    <!-- 네번째 메뉴 -->
+
+    <LinearLayout
+        android:id="@+id/menu3"
+        android:visibility="invisible"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:padding="15dp"
+            android:background="#1333"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:gravity="center_vertical">
+        <ImageView
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher_round" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="지진 알리미 GR"
+                android:textSize="35dp"
+                />
+        </LinearLayout>
+        <TableLayout
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TableRow
+            android:layout_marginVertical="15dp">
+            <Button
+                android:layout_marginHorizontal="20dp"
+                android:layout_height="65dp"
+                android:text="환경설정"
+                android:layout_weight="1"
+                android:id="@+id/settingBtn"
+                android:onClick="etcBtnClick"/>
+            <Button
+                android:layout_marginHorizontal="20dp"
+                android:layout_height="65dp"
+                android:text="내진설계 확인"
+                android:layout_weight="1"
+                android:onClick="etcBtnClick"
+                android:id="@+id/build_check"/>
+            </TableRow>
+            <TableRow
+                android:layout_marginVertical="15dp">
+                <Button
+                    android:onClick="etcBtnClick"
+                    android:id="@+id/safekorea"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="65dp"
+                    android:text="국민안전포털"
+                    android:layout_weight="1"/>
+                <Button
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="65dp"
+                    android:text="지진 대피요령"
+                    android:layout_weight="1"
+                    android:onClick="etcBtnClick"
+                    android:id="@+id/eqaction"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <!--환경설정-->
+
+</FrameLayout>
+
+    <!-- 메뉴바 구성 -->
+    <LinearLayout
+        android:layout_weight="0.5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+        <ImageButton
+            android:scaleType="centerInside"
+           android:src="@drawable/home"
+            android:padding="0dp"
+            android:id="@+id/mButton_0"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="menu_Click"
+            android:background="@drawable/select_border"
+></ImageButton>
+        <ImageButton
+            android:scaleType="centerInside"
+            android:padding="0dp"
+            android:id="@+id/mButton_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="menu_Click"
+            android:src="@drawable/map"
+            android:background="@drawable/non_select_border"/>
+        <ImageButton
+            android:scaleType="centerInside"
+            android:src="@drawable/history"
+            android:id="@+id/mButton_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:onClick="menu_Click"
+            android:background="@drawable/non_select_border"/>
+        <ImageButton
+            android:scaleType="centerInside"
+            android:padding="0dp"
+            android:src="@drawable/more"
+            android:id="@+id/mButton_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:onClick="menu_Click"
+            android:text="기타"
+            android:background="@drawable/non_select_border"
+            />
+    </LinearLayout>
+    <!-- 메뉴바 -->
+</LinearLayout>

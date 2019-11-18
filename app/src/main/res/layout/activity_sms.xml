@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_sms"
+    tools:context=".SmsActivity"
+    android:orientation="vertical"
+    android:background="#00FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_weight="5"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/sms_iv"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:adjustViewBounds="true"
+            android:baselineAlignBottom="true"
+            android:padding="20dp"
+            android:scaleType="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="규모"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mt_box"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="0.0"
+                android:textSize="70dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <TableLayout
+        android:measureWithLargestChild="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_weight="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow android:layout_marginBottom="5dp">
+            <ImageView android:src="@drawable/time"
+                android:layout_weight="1"/>
+            <TextView android:text="정보없음"
+                android:id="@+id/message_time"
+                android:layout_weight="9"
+                android:textSize="20dp"
+                android:textAlignment="center"/>
+        </TableRow>
+        <TableRow android:layout_marginVertical="5dp">
+            <ImageView android:src="@drawable/place"
+                android:layout_weight="1"/>
+            <TextView android:text="정보없음"
+                android:id="@+id/message_place"
+                android:layout_weight="9"
+                android:textAlignment="center"
+                android:textSize="20dp"/>
+        </TableRow>
+        <TableRow android:layout_marginVertical="5dp">
+            <ImageView android:src="@drawable/info"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_weight="9"
+                android:id="@+id/message"
+                android:gravity="center"
+                android:text="정보없음"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                />
+
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <Button
+            android:id="@+id/sms_button0"
+            android:layout_marginHorizontal="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대피소"
+            android:layout_gravity="center"
+            android:onClick="m_click"
+            />
+        <Button
+            android:layout_marginHorizontal="30dp"
+            android:id="@+id/sms_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            android:layout_gravity="center"
+            android:onClick="m_click"
+            />
+    </LinearLayout>
+
+</LinearLayout>

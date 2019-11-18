@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">지진알리미 GR</string>
+    <string name="title_activity_maps">Map</string>
+</resources>
